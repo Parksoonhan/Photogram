@@ -1,0 +1,57 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: utf-8
+      enabled: true
+    
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  profiles:
+    include : oauth
+   
+  
+      
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/photogram?serverTimezone=Asia/Seoul
+    username: root
+    password: root1234
+    
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update  #create 
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+      
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
+
+  security:
+    user:
+      name: test
+      password: 1234  
+      
+          
+   
+#  oauth2:
+#    client:
+#      registration:
+#        naver:
+#          client-id: Rxo0_9ZXSXgXQZehJbjy//앱 아이디
+#          client-secret: ni162FM4w5//앱 시크릿코드
+#          scope: // 데이터 받을 범위
+#            - public_profile
+#            - email
+
+
+file:
+  path: C:/workspace/soontogram/upload/
